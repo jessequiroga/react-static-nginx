@@ -3,7 +3,7 @@ image: docker:latest
 variables:
   DOCKER_DRIVER: overlay2
   NGINX_VERSION: 1.15.2
-  REVISION: r2
+  REVISION: r3
 
 services:
    - docker:dind
