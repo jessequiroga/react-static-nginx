@@ -26,3 +26,12 @@ Confirm that the sample files has the correct headers and that redirecting works
 ## TODO
 
 Automate header testing
+
+## Implementation
+
+This image expects the following tags to be present in the head of the index.html page.
+
+    <meta property="app:server-uri" content="__APP_SERVER_URI__">
+    <meta property="app:stage" content="__APP_STAGE__">
+
+These properties are expected to exist and are available from the `@stackworx/react/ConfigService`
