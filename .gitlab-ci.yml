@@ -46,4 +46,4 @@ release:
       - node_modules/
   script:
     - yarn install --frozen-lockfile
-    - yarn semantic-release
+    - yarn release
