@@ -7,7 +7,9 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-typescript": "^7.3.3",
-    "@semantic-release/gitlab-config": "^5.0.0",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/gitlab": "^3.1.2",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "@types/got": "^9.4.1",
     "@types/jest": "^24.0.11",
     "got": "^9.6.0",
@@ -17,7 +19,11 @@
   },
   "release": {
     "branch": "master",
-    "extends": "@semantic-release/gitlab-config"
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/gitlab"
+    ]
   },
   "scripts": {
     "test": "jest",
