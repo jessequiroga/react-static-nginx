@@ -13,8 +13,6 @@ services:
 
 build:
   stage: build
-  before_script:
-    - ./scripts/node-install.sh
   tags:
     - docker
   cache:
@@ -24,13 +22,14 @@ build:
     - sh scripts/test.sh
 
 build-image:
-  stage: image
+  stage: docker push registry.gitlab.com/stackworx-public/react-static-nginx/dnd_nodejs:latest
   only:
     - tags
   tags:
     - docker
-  script:
+  before_script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+  script:
     - ./scripts/build.sh $CI_COMMIT_REF_NAME
     - ./scripts/push.sh $CI_COMMIT_REF_NAME
 
