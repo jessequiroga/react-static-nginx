@@ -1,4 +1,5 @@
-FROM nginx:1.15.10-alpine
+ARG NGINX_IMAGE
+FROM $NGINX_IMAGE
 
 RUN rm -rf /usr/share/nginx/html/*
 

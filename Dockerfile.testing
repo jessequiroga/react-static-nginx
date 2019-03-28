@@ -1,0 +1,4 @@
+ARG IMAGE
+FROM $IMAGE
+FROM registry.gitlab.com/stackworx-public/react-static-nginx:1.15.2-r3
+COPY static /usr/share/nginx/html/
