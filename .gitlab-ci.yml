@@ -5,15 +5,13 @@ stages:
   - image
   - release
 
-variables:
-  DOCKER_DRIVER: overlay2
-
-services:
-  - docker:dind
-
 build:
   stage: build
-  image: node:10
+  image: registry.gitlab.com/stackworx-public/react-static-nginx/dnd_nodejs
+  variables:
+    DOCKER_DRIVER: overlay2
+  services:
+    - docker:dind
   tags:
     - docker
   cache:
