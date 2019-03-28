@@ -20,7 +20,7 @@ build:
     paths:
       - node_modules/
   script:
-    - sh scripts/test.sh
+    - DOCKER_HOST=docker sh scripts/test.sh
 
 build-image:
   stage: build

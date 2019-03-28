@@ -1,6 +1,8 @@
 import got from "got";
 
-const uri = "http://localhost:8080";
+const { DOCKER_HOST = "localhost" } = process.env;
+
+const uri = `http://${DOCKER_HOST}:8080`;
 
 describe("check headers", () => {
   test("javascript", async () => {
