@@ -13,6 +13,7 @@ services:
 
 build:
   stage: build
+  image: registry.gitlab.com/stackworx-public/react-static-nginx/dnd_nodejs
   tags:
     - docker
   cache:
@@ -23,7 +24,6 @@ build:
 
 build-image:
   stage: build
-  image: registry.gitlab.com/stackworx-public/react-static-nginx/dnd_nodejs
   only:
     - tags
   tags:
