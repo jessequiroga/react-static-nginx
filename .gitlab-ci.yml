@@ -1,4 +1,4 @@
-image: docker:latest
+image: node:10
 
 stages:
   - build
@@ -13,7 +13,7 @@ services:
 
 build:
   stage: build
-  image: registry.gitlab.com/stackworx-public/react-static-nginx/dnd_nodejs
+  image: node:10
   tags:
     - docker
   cache:
@@ -24,6 +24,7 @@ build:
 
 build-image:
   stage: build
+  image: docker:latest
   only:
     - tags
   tags:
@@ -37,12 +38,14 @@ build-image:
 release:
   stage: release
   # when: manual
-  image: node:10
   tags:
     - docker
   dependencies:
   only:
     - master
+  cache:
+    paths:
+      - node_modules/
   script:
     - yarn install --frozen-lockfile
     - yarn semantic-release
