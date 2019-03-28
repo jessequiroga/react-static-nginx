@@ -19,7 +19,7 @@ build:
     paths:
       - node_modules/
   script:
-    - ls
+    - ls ./scripts
     - ./scripts/test.sh
 
 build-image:
