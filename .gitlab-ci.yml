@@ -1,7 +1,7 @@
 image: docker:latest
 
 stages:
-  - test
+  - build
   - image
   - release
 
@@ -11,14 +11,15 @@ variables:
 services:
   - docker:dind
 
-test:
-  stage: test
+build:
+  stage: build
   tags:
     - docker
   cache:
     paths:
       - node_modules/
   script:
+    - ls
     - ./scripts/test.sh
 
 build-image:
