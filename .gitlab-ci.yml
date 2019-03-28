@@ -3,6 +3,7 @@ image: docker:latest
 stages:
   - test
   - image
+  - release
 
 variables:
   DOCKER_DRIVER: overlay2
