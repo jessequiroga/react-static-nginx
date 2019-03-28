@@ -36,11 +36,13 @@ build-image:
 
 release:
   stage: release
-  when: manual
+  # when: manual
+  image: node:10
   tags:
     - docker
   dependencies:
   only:
     - master
   script:
+    - yarn install --frozen-lockfile
     - yarn semantic-release
