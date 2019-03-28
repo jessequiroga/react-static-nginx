@@ -22,7 +22,7 @@ build:
     - sh scripts/test.sh
 
 build-image:
-  stage: docker push registry.gitlab.com/stackworx-public/react-static-nginx/dnd_nodejs:latest
+  stage: build
   only:
     - tags
   tags:
