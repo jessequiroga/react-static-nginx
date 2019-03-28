@@ -4,7 +4,7 @@ const uri = "http://localhost:8080";
 
 describe("check headers", () => {
   test("javascript", async () => {
-    const { headers } = await got(`${uri}/sample.js`);
+    const { headers } = await got(`${uri}/static/sample.js`);
 
     expect(headers).toMatchObject({
       "cache-control": "max-age=31536000, public",
@@ -22,7 +22,7 @@ describe("check headers", () => {
   });
 
   test("css", async () => {
-    const { headers } = await got(`${uri}/sample.css`);
+    const { headers } = await got(`${uri}/static/sample.css`);
 
     expect(headers).toMatchObject({
       "cache-control": "max-age=31536000, public",
@@ -83,7 +83,7 @@ describe("check headers", () => {
   });
 
   test("png", async () => {
-    const { headers } = await got(`${uri}/sample.png`);
+    const { headers } = await got(`${uri}/static/sample.png`);
 
     expect(headers).toMatchObject({
       "content-type": "image/png"
