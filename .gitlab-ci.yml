@@ -20,6 +20,13 @@ build:
   script:
     - DOCKER_HOST=docker sh scripts/test.sh
 
+build:go:
+  stage: build
+  image: golang:1.13.6-buster
+  script:
+    - go build ./...
+    - go test ./...
+
 build-image:
   stage: build
   image: docker:latest
