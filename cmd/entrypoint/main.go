@@ -30,7 +30,7 @@ func main() {
 	}
 
 	for key, _ := range vars {
-		fmt.Printf("Found ENV: %s", key)
+		fmt.Printf("Found ENV: %s\n", key)
 	}
 
 	result, err := pkg.ReplaceEnvVars(data, vars)
